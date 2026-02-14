@@ -56,3 +56,5 @@ scripts/                     CLI entry points
 notebooks/                   EDA notebooks
 tests/                       Unit tests
 ```
+## Web App link
+https://project-games-kx3x.onrender.com/
