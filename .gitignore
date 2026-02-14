@@ -1,3 +1,42 @@
-/data/
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
 
-/proyecto_1_DS_310
+# Virtual environments
+.venv/
+venv/
+3T_project_games/
+
+# Environment
+.env
+
+# OS
+.DS_Store
+
+# Jupyter
+.ipynb_checkpoints/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+
+# Data (keep .gitkeep)
+data/raw/*
+!data/raw/.gitkeep
+data/processed/*
+!data/processed/.gitkeep
+data/reports/*
+!data/reports/.gitkeep
+
+# Claude
+.claude/
+
+# Legacy project dir
+proyecto_1_DS_310
+
+# pytest
+.pytest_cache/
