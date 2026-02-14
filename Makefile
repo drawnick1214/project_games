@@ -1,4 +1,4 @@
-.PHONY: install preprocess analyze test clean
+.PHONY: install preprocess analyze test clean app
 
 install:
 	pip install -e ".[dev]"
@@ -16,3 +16,6 @@ clean:
 	find . -type d -name __pycache__ -exec rm -rf {} +
 	find . -type f -name "*.pyc" -delete
 	rm -rf *.egg-info src/*.egg-info
+
+app:
+	streamlit run app/streamlit_app.py
