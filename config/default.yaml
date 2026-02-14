@@ -1,0 +1,63 @@
+data:
+  raw_path: data/raw/games.csv
+  processed_path: data/processed/games_complete.csv
+  reports_dir: data/reports
+
+columns:
+  sales:
+    - na_sales
+    - eu_sales
+    - jp_sales
+    - other_sales
+  scores:
+    - critic_score
+    - user_score
+  categorical:
+    - genre
+    - platform
+    - rating
+
+imputation:
+  attributes:
+    - critic_score
+    - user_score
+    - rating
+  hierarchy:
+    - [genre, platform, year_of_release]
+    - [genre, platform]
+    - [genre, year_of_release]
+    - [genre]
+    - global
+  strategy:
+    critic_score: median
+    user_score: median
+    rating: mode
+
+analysis:
+  relevant_period:
+    start_year: 2014
+    end_year: 2016
+  significance_level: 0.05
+  top_n_platforms: 5
+  top_n_genres: 5
+  sales_regions:
+    - na_sales
+    - eu_sales
+    - jp_sales
+    - other_sales
+
+hypothesis_tests:
+  - name: xbox_one_vs_pc
+    column: user_score
+    group_column: platform
+    group_a: XOne
+    group_b: PC
+    alternative: two-sided
+    test: levene_then_ttest
+  - name: action_vs_sports
+    column: user_score
+    group_column: genre
+    group_a: Action
+    group_b: Sports
+    alternative: two-sided
+    test: levene_then_ttest
