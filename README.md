@@ -34,6 +34,15 @@ Runs temporal, platform, genre, regional, and hypothesis-testing analyses on the
 make test
 ```
 
+### Launch interactive dashboard
+
+```bash
+pip install -e ".[app]"
+make app
+```
+
+Opens a Streamlit dashboard with tabs for Overview, Temporal, Platforms, Genres, Regional, and Hypothesis Tests.
+
 ## Project Structure
 
 ```
@@ -41,7 +50,8 @@ config/default.yaml          Configuration (paths, params)
 src/project_games/           Python package
   data/                      Loading, cleaning, imputation
   analysis/                  Temporal, platform, genre, regional, hypothesis
-  visualization/             Matplotlib plotting helpers
+  visualization/             Matplotlib and Plotly plotting helpers
+app/                         Streamlit dashboard
 scripts/                     CLI entry points
 notebooks/                   EDA notebooks
 tests/                       Unit tests
