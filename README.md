@@ -111,3 +111,5 @@ tests/                       Unit tests
 - **Dashboard:** Streamlit
 - **Testing:** pytest
 - **Linting:** ruff
+## Web App link
+https://project-games-kx3x.onrender.com/
